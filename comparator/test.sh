@@ -2,6 +2,7 @@
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+CLEAR='\033[0;30m'
 
 runTest() {
     testNumber=$1
@@ -40,3 +41,5 @@ runTest 8 3
 
 echo "Тест 9: Сравнения текстов, где нет 'string:'"
 runTest 9 5
+
+echo -e "$CLEAR"
