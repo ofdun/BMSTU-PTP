@@ -26,8 +26,8 @@ if ! [[ -f "$file1" && -f "$file2" ]]; then
 fi
 
 # Get files text after first string:.*
-string_file1=$(grep -z "string:.*" "$file1")
-string_file2=$(grep -z "string:.*" "$file2")
+string_file1=$(cat -A "$file1" | grep -zo "string:.*" | tr -d "\0")
+string_file2=$(cat -A "$file2" | grep -zo "string:.*" | tr -d "\0")
 
 if [ "$string_file1" == "" -o "$string_file2" == "" ]; then
     exit 5
